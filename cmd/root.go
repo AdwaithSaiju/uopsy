@@ -29,7 +29,7 @@ func Execute() {
 	command := strings.ToLower(os.Args[1])
 
 	switch command {
-	case "scan":
+	case "scan", "-s", "--scan":
 		Scan()
 	case "-h", "--help", "help":
 		showHelp()
