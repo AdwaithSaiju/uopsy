@@ -22,7 +22,7 @@ const asciiArt = `
 
 func Execute() {
 	if len(os.Args) < 2 {
-		ShowHelp()
+		showHelp()
 		return
 	}
 
@@ -32,15 +32,15 @@ func Execute() {
 	case "scan":
 		Scan()
 	case "-h", "--help", "help":
-		ShowHelp()
+		showHelp()
 	default:
 		fmt.Printf("Unknown command: '%s'\n\n", os.Args[1])
-		ShowHelp()
+		showHelp()
 		os.Exit(1)
 	}
 }
 
-func ShowHelp() {
+func showHelp() {
 	fmt.Println(asciiArt)
 	fmt.Println()
 	fmt.Println("  USAGE:")
