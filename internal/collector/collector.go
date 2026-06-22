@@ -1,16 +1,24 @@
 package collector
 
-import "runtime"
+import (
+	"fmt"
+	"os"
+	"runtime"
 
-func GetCurrentOS() string {
+	"github.com/AdwaithSaiju/uopsy/internal/models"
+)
+
+func GetCurrentOS() ([]models.USBDevice, error) {
 	switch runtime.GOOS {
 	case "windows":
-		return "Windows"
+		return GetWindowsDetails()
 	case "linux":
-		return "Linux"
+		return GetLinuxDetails()
 	case "darwin":
-		return "Mac"
+		return GetMacOSDetails()
 	default:
-		return "Unknown"
+		fmt.Printf(" [-] Operating system %s is unsupported.\n", runtime.GOOS)
+		os.Exit(1)
+		return nil, nil
 	}
 }
