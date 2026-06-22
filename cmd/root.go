@@ -41,7 +41,7 @@ func Execute() {
 }
 
 func showHelp() {
-	fmt.Println(asciiArt)
+	fmt.Print(asciiArt)
 	fmt.Println()
 	fmt.Println("  USAGE:")
 	fmt.Println("    uopsy <command>")
