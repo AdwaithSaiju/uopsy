@@ -1,7 +1,15 @@
 package cmd
 
-import "fmt"
+import (
+	"fmt"
+
+	"github.com/AdwaithSaiju/uopsy/internal/collector"
+)
 
 func Scan() {
-	fmt.Println("Scanning USB devices...")
+	currentOS := collector.GetCurrentOS()
+
+	fmt.Printf(" [+] Detected OS: %s\n", currentOS)
+	fmt.Println(" [+] Scanning USB devices...")
+
 }
